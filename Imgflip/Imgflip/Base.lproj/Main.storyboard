@@ -83,7 +83,9 @@ para ver y compartir tus memes favoritos</string>
                     <navigationItem key="navigationItem" title="Meme Generator" id="oqx-qw-Vz9"/>
                     <connections>
                         <outlet property="getMemesButton" destination="F1b-vs-feR" id="arj-IC-7ZH"/>
+                        <outlet property="randomMemeButton" destination="k3h-Q9-3kS" id="kf9-Y3-ypV"/>
                         <segue destination="sg0-fP-S5I" kind="show" identifier="goMemesList" id="e2J-bE-cG2"/>
+                        <segue destination="Xg6-gD-ARU" kind="show" identifier="goDetailMeme" id="WSi-eZ-mKt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -219,4 +221,7 @@ para ver y compartir tus memes favoritos</string>
             <point key="canvasLocation" x="136.875" y="138.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WSi-eZ-mKt"/>
+    </inferredMetricsTieBreakers>
 </document>

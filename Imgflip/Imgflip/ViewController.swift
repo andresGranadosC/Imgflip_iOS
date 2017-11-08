@@ -11,13 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var getMemesButton: UIButton!
-    
+    @IBOutlet weak var randomMemeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        getMemesButton.addTarget(self, action: #selector(serviceGetMemes), for: .touchUpInside)
+        getMemesButton.addTarget(self, action: #selector(getMemes), for: .touchUpInside)
+        randomMemeButton.addTarget(self, action: #selector(selectRandomMeme), for: .touchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
     }
 
     
-    func serviceGetMemes(){
+    func serviceGetMemes(isRandomMeme:Bool){
         
         let myUrl = NSURL(string: "https://api.imgflip.com/get_memes")
         //        let myUrl = NSURL(string: "\(HostPort)v1/user/getPassword?access_token=\(accessToken)")
@@ -64,11 +65,13 @@ class ViewController: UIViewController {
                         
                         if let memes = (data.object(forKey: "memes")) as? NSArray {
                             
-                            self.performSegue(withIdentifier: "goMemesList", sender: memes)
-                            
-                            print("memes = \(memes)")
-                            
-                            
+                            if isRandomMeme{
+                                let row = self.selectRandomIndex(memesNumber: memes.count)
+                                let m = meme(jsonDictionary: memes.object(at: row) as! NSDictionary)
+                                self.performSegue(withIdentifier: "goDetailMeme", sender: m)
+                            }else{
+                                self.performSegue(withIdentifier: "goMemesList", sender: memes)
+                            }
                         }
                     }else if (json?.object(forKey: "error")) != nil {
                         
@@ -103,7 +106,30 @@ class ViewController: UIViewController {
                 }
                 
             }
+        }else if segue.identifier == "goDetailMeme"{
+            if let detailMeme = segue.destination as? memeDetailViewController{
+                
+                if let m = sender as? meme {
+                    
+                    detailMeme.selectedMeme = m
+                }
+            }
         }
+    }
+    
+    func selectRandomIndex(memesNumber:Int) -> Int{
+        print(arc4random() )
+        let n: Int = Int(arc4random()) % 30
+        print("n: \(n)")
+        return n
+    }
+    
+    func getMemes(){
+        serviceGetMemes(isRandomMeme: false)
+    }
+    
+    func selectRandomMeme(){
+        serviceGetMemes(isRandomMeme: true)
     }
 
 }
