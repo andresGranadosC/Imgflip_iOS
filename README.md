@@ -16,6 +16,8 @@ A través del botón "Memes" puedes acceder al listado completo de memes, con el
 
 Meme Generator te permite ver y compartir tus memes favoritos.
 
-## Tareas pendientes:
 
-- Verificar que la app muestre errores de red o disponibilidad del servicio web al intentar obtener el listado.
+Desarrollado para iPhone 4
+version iOS: 9.0 y superiores
+Lenguaje: Swift 3.0
+
