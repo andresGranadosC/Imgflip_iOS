@@ -64,7 +64,7 @@ class MemeTableView: UITableViewController {
     func loadMemes(){
         let nMemes = self.memeList.count
         
-        for i in 0..<2{ //nMemes {
+        for i in 0..<nMemes {
             let Meme = meme(jsonDictionary: self.memeList.object(at: i) as! NSDictionary )
             print(Meme)
             

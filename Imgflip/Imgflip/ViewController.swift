@@ -85,7 +85,7 @@ class ViewController: UIViewController {
                 
                 DispatchQueue.main.async() { () -> Void in
                     
-                    displayAlert(viewp: self, title: "", userMessage: "")
+                    displayAlert(viewp: self, title: "Error", userMessage: error.localizedDescription)
                 }
                 print(error)
             };
@@ -119,9 +119,9 @@ class ViewController: UIViewController {
     
     func selectRandomIndex(memesNumber:Int) -> Int{
         print(arc4random() )
-        let n: Int = Int(arc4random()) % 30
-        print("n: \(n)")
+        let n:Int = Int(arc4random_uniform(UInt32(memesNumber)))
         return n
+        
     }
     
     func getMemes(){
