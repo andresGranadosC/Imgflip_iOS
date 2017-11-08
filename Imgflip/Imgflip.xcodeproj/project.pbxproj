@@ -14,6 +14,10 @@
 		AC6825321FB24D4C0060CD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC6825301FB24D4C0060CD56 /* LaunchScreen.storyboard */; };
 		AC68253D1FB24D4D0060CD56 /* ImgflipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68253C1FB24D4D0060CD56 /* ImgflipTests.swift */; };
 		AC6825481FB24D4E0060CD56 /* ImgflipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6825471FB24D4E0060CD56 /* ImgflipUITests.swift */; };
+		AC6825561FB2895D0060CD56 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6825551FB2895D0060CD56 /* GlobalFunctions.swift */; };
+		AC6825581FB28E5D0060CD56 /* MemeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6825571FB28E5D0060CD56 /* MemeTableView.swift */; };
+		AC68255A1FB28FBE0060CD56 /* memeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6825591FB28FBE0060CD56 /* memeTableViewCell.swift */; };
+		AC68255C1FB2906B0060CD56 /* meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68255B1FB2906B0060CD56 /* meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		AC6825431FB24D4D0060CD56 /* ImgflipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgflipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6825471FB24D4E0060CD56 /* ImgflipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgflipUITests.swift; sourceTree = "<group>"; };
 		AC6825491FB24D4E0060CD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC6825551FB2895D0060CD56 /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		AC6825571FB28E5D0060CD56 /* MemeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableView.swift; sourceTree = "<group>"; };
+		AC6825591FB28FBE0060CD56 /* memeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memeTableViewCell.swift; sourceTree = "<group>"; };
+		AC68255B1FB2906B0060CD56 /* meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,10 @@
 			children = (
 				AC6825271FB24D4B0060CD56 /* AppDelegate.swift */,
 				AC6825291FB24D4B0060CD56 /* ViewController.swift */,
+				AC6825551FB2895D0060CD56 /* GlobalFunctions.swift */,
+				AC6825571FB28E5D0060CD56 /* MemeTableView.swift */,
+				AC68255B1FB2906B0060CD56 /* meme.swift */,
+				AC6825591FB28FBE0060CD56 /* memeTableViewCell.swift */,
 				AC68252B1FB24D4C0060CD56 /* Main.storyboard */,
 				AC68252E1FB24D4C0060CD56 /* Assets.xcassets */,
 				AC6825301FB24D4C0060CD56 /* LaunchScreen.storyboard */,
@@ -262,8 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC68255A1FB28FBE0060CD56 /* memeTableViewCell.swift in Sources */,
 				AC68252A1FB24D4B0060CD56 /* ViewController.swift in Sources */,
+				AC6825581FB28E5D0060CD56 /* MemeTableView.swift in Sources */,
 				AC6825281FB24D4B0060CD56 /* AppDelegate.swift in Sources */,
+				AC6825561FB2895D0060CD56 /* GlobalFunctions.swift in Sources */,
+				AC68255C1FB2906B0060CD56 /* meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -402,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -417,6 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F5A6XRH4S6;
 				INFOPLIST_FILE = Imgflip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AFGranadosC.Imgflip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,6 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F5A6XRH4S6;
 				INFOPLIST_FILE = Imgflip/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AFGranadosC.Imgflip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +532,7 @@
 				AC68254E1FB24D4E0060CD56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC68254F1FB24D4E0060CD56 /* Build configuration list for PBXNativeTarget "ImgflipTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +541,7 @@
 				AC6825511FB24D4E0060CD56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC6825521FB24D4E0060CD56 /* Build configuration list for PBXNativeTarget "ImgflipUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +550,7 @@
 				AC6825541FB24D4E0060CD56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
