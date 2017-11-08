@@ -20,6 +20,7 @@ class memeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        
         memeImageView.image = UIImage(named: "")
     }
     

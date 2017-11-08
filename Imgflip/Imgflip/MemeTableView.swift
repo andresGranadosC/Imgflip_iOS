@@ -30,7 +30,7 @@ class MemeTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return memeList.count
+        return memeObjects.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,14 +62,9 @@ class MemeTableView: UITableViewController {
     }
     
     func loadMemes(){
-        
-        
-        
-        
-        
         let nMemes = self.memeList.count
         
-        for i in 0..<nMemes {
+        for i in 0..<2{ //nMemes {
             let Meme = meme(jsonDictionary: self.memeList.object(at: i) as! NSDictionary )
             print(Meme)
             
@@ -84,6 +79,25 @@ class MemeTableView: UITableViewController {
         let m = memeObjects[indexPath.row] as! meme
         
         return CGFloat(m.height)
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "goMemeDetail", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goMemeDetail"{
+            if let row = sender as? Int{
+                
+                if let detailMeme = segue.destination as? memeDetailViewController{
+                    
+                    detailMeme.selectedMeme = memeObjects[row] as! meme
+                }
+            }
+        }
     }
     
 }
