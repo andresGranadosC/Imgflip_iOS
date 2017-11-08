@@ -64,11 +64,11 @@ class ViewController: UIViewController {
                         
                         if let memes = (data.object(forKey: "memes")) as? NSArray {
                             
+                            self.performSegue(withIdentifier: "goMemesList", sender: memes)
+                            
                             print("memes = \(memes)")
                             
-                            let Meme = meme(jsonDictionary: memes.object(at: 0) as! NSDictionary )
                             
-                            print("Meme height: \(Meme.height)")
                         }
                     }else if (json?.object(forKey: "error")) != nil {
                         
@@ -91,6 +91,19 @@ class ViewController: UIViewController {
         
         task.resume()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goMemesList"{
+            if let memeTableView = segue.destination as? MemeTableView{
+                
+                if let memes = sender as? NSArray{
+                    memeTableView.memeList = memes
+                }
+                
+            }
+        }
     }
 
 }

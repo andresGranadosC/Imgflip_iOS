@@ -23,3 +23,17 @@ func displayAlert(viewp: UIViewController,title:String ,userMessage: String){
     
     viewp.present(alert, animated: true, completion: nil)
 }
+
+
+func getDataFromUrl(url:NSURL, completion: @escaping ((_ data: NSData?, _ response: URLResponse?, _ error: NSError? ) -> Void)) {
+    URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
+        completion(data as NSData?, response, error as NSError?)
+        }.resume()
+}
+
+
+
+
+
+
+

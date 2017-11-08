@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="Memes" id="oqx-qw-Vz9"/>
                     <connections>
                         <outlet property="getMemesButton" destination="F1b-vs-feR" id="arj-IC-7ZH"/>
-                        <segue destination="sg0-fP-S5I" kind="show" id="e2J-bE-cG2"/>
+                        <segue destination="sg0-fP-S5I" kind="show" identifier="goMemesList" id="e2J-bE-cG2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -56,12 +56,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mqQ-Ys-iXC">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mqQ-Ys-iXC">
                                             <rect key="frame" x="0.0" y="-1" width="320" height="150"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ree-iT-Qee">
-                                            <rect key="frame" x="0.0" y="104" width="320" height="45"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ree-iT-Qee">
+                                            <rect key="frame" x="0.0" y="89" width="320" height="60"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -72,7 +72,7 @@
                                         <constraint firstItem="mqQ-Ys-iXC" firstAttribute="height" secondItem="zcm-Nd-A06" secondAttribute="height" id="F8g-K8-bnx"/>
                                         <constraint firstItem="mqQ-Ys-iXC" firstAttribute="width" secondItem="zcm-Nd-A06" secondAttribute="width" id="Kgi-KH-Cxa"/>
                                         <constraint firstItem="mqQ-Ys-iXC" firstAttribute="centerX" secondItem="zcm-Nd-A06" secondAttribute="centerX" id="Pqd-oh-Mw3"/>
-                                        <constraint firstItem="ree-iT-Qee" firstAttribute="height" secondItem="zcm-Nd-A06" secondAttribute="height" multiplier="0.3" id="YVf-dT-0Zr"/>
+                                        <constraint firstItem="ree-iT-Qee" firstAttribute="height" secondItem="zcm-Nd-A06" secondAttribute="height" multiplier="0.4" id="YVf-dT-0Zr"/>
                                         <constraint firstItem="ree-iT-Qee" firstAttribute="bottom" secondItem="mqQ-Ys-iXC" secondAttribute="bottom" id="hfQ-B8-2In"/>
                                         <constraint firstItem="ree-iT-Qee" firstAttribute="centerX" secondItem="mqQ-Ys-iXC" secondAttribute="centerX" id="vxd-w6-dUG"/>
                                     </constraints>

@@ -13,11 +13,12 @@ class MemeTableView: UITableViewController {
 
     
     var memeList:NSArray = []
+    var memeObjects:NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        loadMemes()
         
     }
     
@@ -39,11 +40,50 @@ class MemeTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let memeCell = self.tableView.dequeueReusableCell(withIdentifier: "memeCell", for: indexPath)
+        let m = memeObjects[indexPath.row] as! meme
         
-//        memeCell.imageView = 
+        let memeCell = self.tableView.dequeueReusableCell(withIdentifier: "memeCell", for: indexPath) as! memeTableViewCell
+        
+        let urlString :String = NSString(string: m.url).addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+        let url = NSURL(string: urlString)!
+        
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            DispatchQueue.main.async() { () -> Void in
+                
+                memeCell.memeImageView.image = UIImage(data: data as Data)
+            }
+        }
+        memeCell.messageLabel.text = m.name
+//        memeCell.imageView =
         
         return memeCell
+    }
+    
+    func loadMemes(){
+        
+        
+        
+        
+        
+        let nMemes = self.memeList.count
+        
+        for i in 0..<nMemes {
+            let Meme = meme(jsonDictionary: self.memeList.object(at: i) as! NSDictionary )
+            print(Meme)
+            
+            memeObjects.add(Meme)
+            print(memeObjects[i] as! meme)
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let m = memeObjects[indexPath.row] as! meme
+        
+        return CGFloat(m.height)
     }
     
 }
